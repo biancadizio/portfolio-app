@@ -25,7 +25,7 @@ const Header = () => {
         <Name>
           <FaCode size={32} color="#007bff" /> BiaCode
         </Name>
-        <FrontendDeveloper>Frontend Developer</FrontendDeveloper>
+        <FrontendDeveloper> TESTEEEEEE Frontend Developer</FrontendDeveloper>
       </LeftContent>
       <MobileMenuButton onClick={toggleMobileMenu}>
         <FaBars size={24} color="white" />

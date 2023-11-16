@@ -22,3 +22,4 @@ export const TechnologiesList = styled.ul`
 export const ListItem = styled.li`
   margin-bottom: 0.5rem;
 `;
+
