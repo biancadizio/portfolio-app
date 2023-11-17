@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { HeaderWrapper, Button, LeftContent, RightContent, Name, FrontendDeveloper, MobileMenu, MobileMenuButton } from './Header-styled.js';
+import React, { useState, useEffect } from 'react';
+import { HeaderWrapper, Navigation, MobileMenu, MobileMenuButton, Button, LeftContent, Title, Description } from './Header-styled';
 import { FaCode, FaBars } from 'react-icons/fa';
 
 const Header = () => {
@@ -8,7 +8,11 @@ const Header = () => {
   const scrollToSection = (id) => {
     const section = document.querySelector(id);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = document.querySelector('header').offsetHeight;
+      window.scrollTo({
+        top: section.offsetTop - headerHeight - 100,
+        behavior: 'smooth',
+      });
       if (isMobileMenuOpen) {
         setMobileMenuOpen(false);
       }
@@ -19,19 +23,44 @@ const Header = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  useEffect(() => {
+    const closeMobileMenu = () => {
+      if (isMobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', closeMobileMenu);
+
+    return () => {
+      document.removeEventListener('click', closeMobileMenu);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <HeaderWrapper>
+    <>
       <LeftContent>
-        <Name>
-          <FaCode size={32} color="#007bff" /> BiaCode
-        </Name>
-        <FrontendDeveloper> TESTEEEEEE Frontend Developer</FrontendDeveloper>
+        <Title>
+          <FaCode size={32} color="#b9ef37" /> BiaCode
+          <Description>Frontend Developer</Description>
+        </Title>
       </LeftContent>
-      <MobileMenuButton onClick={toggleMobileMenu}>
-        <FaBars size={24} color="white" />
-      </MobileMenuButton>
-      {isMobileMenuOpen && (
-        <MobileMenu>
+      <HeaderWrapper>
+        <Navigation>
+          <MobileMenuButton onClick={toggleMobileMenu}>
+            <FaBars size={24} color="grey" />
+          </MobileMenuButton>
+          {isMobileMenuOpen && (
+            <MobileMenu onClick={(e) => e.stopPropagation()}>
+              <Button onClick={() => scrollToSection('#inicio')}>Início</Button>
+              <Button onClick={() => scrollToSection('#sobremim')}>Sobre mim</Button>
+              <Button onClick={() => scrollToSection('#educacao')}>Educação</Button>
+              <Button onClick={() => scrollToSection('#experiencias')}>Experiências</Button>
+              <Button onClick={() => scrollToSection('#projetos')}>Projetos</Button>
+              <Button onClick={() => scrollToSection('#servicos')}>Serviços</Button>
+              <Button onClick={() => scrollToSection('#contato')}>Contato</Button>
+            </MobileMenu>
+          )}
           <Button onClick={() => scrollToSection('#inicio')}>Início</Button>
           <Button onClick={() => scrollToSection('#sobremim')}>Sobre mim</Button>
           <Button onClick={() => scrollToSection('#educacao')}>Educação</Button>
@@ -39,9 +68,9 @@ const Header = () => {
           <Button onClick={() => scrollToSection('#projetos')}>Projetos</Button>
           <Button onClick={() => scrollToSection('#servicos')}>Serviços</Button>
           <Button onClick={() => scrollToSection('#contato')}>Contato</Button>
-        </MobileMenu>
-      )}
-    </HeaderWrapper>
+        </Navigation>
+      </HeaderWrapper>
+    </>
   );
 };
 

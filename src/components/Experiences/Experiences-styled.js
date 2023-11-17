@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
 export const ExperiencesWrapper = styled.div`
-  background-color: #f4f4f4;
+  background-color: #000000;
   padding: 2rem;
 `;
 
 export const Title = styled.h2`
-  color: #333;
+  color: #ffff;
   margin-top: 80px;
 `;
 
 export const Paragraph = styled.p`
   margin-bottom: 1rem;
+  color: #989fab;
 `;
 
 export const ExperienceList = styled.ul`

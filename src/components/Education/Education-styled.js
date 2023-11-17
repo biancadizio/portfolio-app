@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const EducationWrapper = styled.div`
-  background-color: #202124;
+  background-color:  #111111;
   padding: 2rem;
 `;
 
 export const Title = styled.h2`
-  color: red;
-  margin-top: 80px;
+color: #ffffff;
+font-size: 2.1rem;
   `;
 
 export const Paragraph = styled.p`
