@@ -4,8 +4,9 @@ import styled from 'styled-components';
 export const ContactWrapper = styled.div`
   background-color: #333;
   color: white;
-  padding: 2rem;
+  // padding: 2rem 3rem;
   text-align: center;
+  width: 100%;
 `;
 
 export const Title = styled.h2`

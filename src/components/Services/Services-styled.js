@@ -1,18 +1,20 @@
 import styled from 'styled-components';
 
 export const ServicesWrapper = styled.div`
-  background-color: #f4f4f4;
-  padding: 2rem;
+  background-color: #000000;
+  // padding: 2rem 3rem;
+  width: 100%;
 `;
 
 export const Title = styled.h2`
-  color: #333;
+  color: white;
 `;
 
 export const ServiceContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
+  width: 100%;
 `;
 
 export const ServiceItem = styled.div`
@@ -21,6 +23,7 @@ export const ServiceItem = styled.div`
   border: 1px solid #ddd;
   border-radius: 5px;
   text-align: center;
+  color: grey;
 `;
 
 export const Icon = styled.span`

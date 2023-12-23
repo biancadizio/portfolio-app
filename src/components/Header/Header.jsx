@@ -1,9 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { HeaderWrapper, Navigation, MobileMenu, MobileMenuButton, Button, LeftContent, Title, Description } from './Header-styled';
-import { FaCode, FaBars } from 'react-icons/fa';
+import {
+  HeaderWrapper,
+  Navigation,
+  MobileMenu,
+  MobileMenuButton,
+  LeftContent,
+  Title,
+  Description,
+  ButtonOne,
+} from './Header-styled';
+import { FaCode, FaBars, FaTimes } from 'react-icons/fa';
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobileView, setMobileView] = useState(false);
+
+  const handleResize = () => {
+    setMobileView(window.innerWidth <= 815);
+  };
+
+  useEffect(() => {
+    handleResize(); // Define o estado inicial
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const scrollToSection = (id) => {
     const section = document.querySelector(id);
@@ -23,20 +47,6 @@ const Header = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  useEffect(() => {
-    const closeMobileMenu = () => {
-      if (isMobileMenuOpen) {
-        setMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('click', closeMobileMenu);
-
-    return () => {
-      document.removeEventListener('click', closeMobileMenu);
-    };
-  }, [isMobileMenuOpen]);
-
   return (
     <>
       <LeftContent>
@@ -47,27 +57,34 @@ const Header = () => {
       </LeftContent>
       <HeaderWrapper>
         <Navigation>
-          <MobileMenuButton onClick={toggleMobileMenu}>
-            <FaBars size={24} color="grey" />
-          </MobileMenuButton>
-          {isMobileMenuOpen && (
-            <MobileMenu onClick={(e) => e.stopPropagation()}>
-              <Button onClick={() => scrollToSection('#inicio')}>Início</Button>
-              <Button onClick={() => scrollToSection('#sobremim')}>Sobre mim</Button>
-              <Button onClick={() => scrollToSection('#educacao')}>Educação</Button>
-              <Button onClick={() => scrollToSection('#experiencias')}>Experiências</Button>
-              <Button onClick={() => scrollToSection('#projetos')}>Projetos</Button>
-              <Button onClick={() => scrollToSection('#servicos')}>Serviços</Button>
-              <Button onClick={() => scrollToSection('#contato')}>Contato</Button>
-            </MobileMenu>
+          {isMobileView ? (
+            <>
+              <MobileMenuButton onClick={toggleMobileMenu}>
+              {isMobileMenuOpen ? <FaTimes size={24} color="grey" /> : <FaBars size={24} color="grey" />}
+              </MobileMenuButton>
+              {isMobileMenuOpen && (
+                <MobileMenu onClick={(e) => e.stopPropagation()}>
+                  {/* <ButtonOne onClick={() => scrollToSection('#inicio')}>Início</ButtonOne> */}
+                  <ButtonOne onClick={() => scrollToSection('#sobremim')}>Sobre mim</ButtonOne>
+                  <ButtonOne onClick={() => scrollToSection('#educacao')}>Educação</ButtonOne>
+                  <ButtonOne onClick={() => scrollToSection('#experiencias')}>Experiências</ButtonOne>
+                  <ButtonOne onClick={() => scrollToSection('#projetos')}>Projetos</ButtonOne>
+                  <ButtonOne onClick={() => scrollToSection('#servicos')}>Serviços</ButtonOne>
+                  <ButtonOne onClick={() => scrollToSection('#contato')}>Contato</ButtonOne>
+                </MobileMenu>
+              )}
+            </>
+          ) : (
+            <>
+              <ButtonOne onClick={() => scrollToSection('#inicio')}>Início</ButtonOne>
+              <ButtonOne onClick={() => scrollToSection('#sobremim')}>Sobre mim</ButtonOne>
+              <ButtonOne onClick={() => scrollToSection('#educacao')}>Educação</ButtonOne>
+              <ButtonOne onClick={() => scrollToSection('#experiencias')}>Experiências</ButtonOne>
+              <ButtonOne onClick={() => scrollToSection('#projetos')}>Projetos</ButtonOne>
+              <ButtonOne onClick={() => scrollToSection('#servicos')}>Serviços</ButtonOne>
+              <ButtonOne onClick={() => scrollToSection('#contato')}>Contato</ButtonOne>
+            </>
           )}
-          <Button onClick={() => scrollToSection('#inicio')}>Início</Button>
-          <Button onClick={() => scrollToSection('#sobremim')}>Sobre mim</Button>
-          <Button onClick={() => scrollToSection('#educacao')}>Educação</Button>
-          <Button onClick={() => scrollToSection('#experiencias')}>Experiências</Button>
-          <Button onClick={() => scrollToSection('#projetos')}>Projetos</Button>
-          <Button onClick={() => scrollToSection('#servicos')}>Serviços</Button>
-          <Button onClick={() => scrollToSection('#contato')}>Contato</Button>
         </Navigation>
       </HeaderWrapper>
     </>

@@ -1,28 +1,42 @@
 import styled from 'styled-components';
 
+export const ToggleMenuWrapper = styled.div`
+  margin-top: 40px;
+  display: none;
+  align-items: center;
+
+  @media (max-width: 815px) {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-right: 15%;
+  }
+`;
+
+export const ButtonToggleMenu = styled.button`
+  color: grey;
+  border: none;
+  background: none;
+`;
+
+
+
 export const Button = styled.div`
   line-height: 50px;
   height: 50px;
   text-align: center;
-  width: 100%;
-  align-items: center;
-  background-color: blue;
-
-  /* Telas com largura de 1024 pixels ou mais */
-  @media (min-width: 1024px) {
-    /* Adicione seus estilos aqui */
-  }
-
+  width: 250px;
+  cursor: pointer;
 `;
 
 export const ButtonOne = styled(Button)`
   color: grey;
   transition: all 0.3s;
   position: relative;
-  align-items: center;
-  width: 100%;
   margin-top: 30px;
-  
 
   span {
     transition: all 0.3s;
@@ -45,7 +59,6 @@ export const ButtonOne = styled(Button)`
     border-top-color: grey;
     border-bottom-color: grey;
     transform: scale(0.1, 1);
-    
   }
 
   span {
@@ -78,36 +91,28 @@ export const ButtonOne = styled(Button)`
     opacity: 0;
     transform: scale(0.1, 1);
   }
-
-  /* Telas com largura de 1024 pixels ou mais */
-@media (min-width: 1024px) {
-  /* Adicione seus estilos aqui */
-}
-
-  `;
+`;
 
 export const HeaderWrapper = styled.header`
   width: 100%;
   display: flex;
-  justify-content: 
-  // justify-content: space-between;
-  // position: absolute;
-  // top: 0;
-  // right: 0;
-  // left: 0;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   background-color: #111111;
   color: white;
-  padding: 0.9rem 0 0 0;
-  // z-index: 1000;
+  padding: 1rem 5%;
+  z-index: 1000;
   font-size: 1.2rem;
+
   margin-top: 70px;
   height: 70px;
 
-  /* Telas com largura de 1024 pixels ou mais */
-  @media (min-width: 1024px) {
-    /* Adicione seus estilos aqui */
+  @media (max-width: 815px) {
+    padding: 1rem 2%;
   }
-
 `;
 
 export const LeftContent = styled.div`
@@ -124,11 +129,9 @@ export const LeftContent = styled.div`
   z-index: 1001;
   margin: 0;
 
-  /* Telas com largura de 1024 pixels ou mais */
-@media (min-width: 1024px) {
-  /* Adicione seus estilos aqui */
-}
-
+  @media (max-width: 815px) {
+    padding: 1.5rem 2%;
+  }
 `;
 
 export const Title = styled.h2`
@@ -136,11 +139,9 @@ export const Title = styled.h2`
   color: #ffffff;
   font-size: 2rem;
 
-  /* Telas com largura de 1024 pixels ou mais */
-  @media (min-width: 1024px) {
-    /* Adicione seus estilos aqui */
+  @media (max-width: 815px) {
+    font-size: 1.5rem;
   }
-
 `;
 
 export const Description = styled.p`
@@ -148,62 +149,55 @@ export const Description = styled.p`
   color: #b9ef37;
   font-size: 1.2rem;
 
-  /* Telas com largura de 1024 pixels ou mais */
-  @media (min-width: 1024px) {
-    /* Adicione seus estilos aqui */
+  @media (max-width: 815px) {
+    font-size: 1rem;
   }
-
 `;
 
 export const Navigation = styled.div`
   display: flex;
-  align-items: center;
-  self-align: center;
-  width: 100%;
-  background-color: green;
-  margin-top: 25px;
-  margin-bottom: 0;
+  justify-content: space-between;
+  width: 80%;
 
-
-  /* Telas com largura de 1024 pixels ou mais */
-@media (min-width: 1024px) {
-  /* Adicione seus estilos aqui */
-}
-
+  @media (max-width: 815px) {
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
 `;
 
 export const MobileMenuButton = styled.button`
-  background-color: transparent;
-  border: none;
-  text-align: right;
-  align-items: right;
-  width: 100%;
-  
+  margin-top: 40px;
+  display: none;
+  align-items: center;
 
-  /* Telas com largura de 1024 pixels ou mais */
-  @media (min-width: 1024px) {
-    /* Adicione seus estilos aqui */
+  @media (max-width: 815px) {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-right: 15%;
   }
 `;
 
 export const MobileMenu = styled.div`
 display: flex;
 flex-direction: column;
-position: fixed;
-margin-top: 170px;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+position: fixed; /* Alterado de absolute para fixed */
+top: 0;
+left: 0;
 width: 100%;
 height: 100%;
 background-color: black;
 justify-content: center;
 align-items: center;
-z-index: 1002;
-background-color: purple;
-
-/* Telas com largura de 1024 pixels ou mais */
-@media (min-width: 1024px) {
-  /* Adicione seus estilos aqui */
-}
+z-index: 1002; /* Z-index maior que os outros elementos para sobrepor */
 `;
+
+
+
+
+
+// Restante do código
