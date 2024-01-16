@@ -1,5 +1,5 @@
 // Experiences.jsx
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   ExperiencesWrapper,
   Title,
@@ -8,17 +8,22 @@ import {
   DescriptionContainer,
   Paragraph,
   DivButtonsAndDescription,
+  ScrollBar,
+  // ScrollContainer,
+  // ScrollContainerInner,
 } from './Experiences-styled';
 
 const Experiences = () => {
   const [showDescription, setShowDescription] = useState(null);
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+  const buttonContainerRef = useRef(null);
 
   const experiencesData = [
-    {
-      title: 'FREELANCER',
-      description:
-        'Atualmente, trabalho como freelancer na área de Desenvolvimento Frontend.',
-    },
+    // {
+    //   title: 'FREELANCER',
+    //   description:
+    //     'Atualmente, trabalho como freelancer na área de Desenvolvimento Frontend.',
+    // },
     {
       title: 'EAGLE-EDU',
       description:
@@ -37,25 +42,59 @@ const Experiences = () => {
     {
       title: 'ALÉM DO DESENVOLVIMENTO',
       description:
+        'Atendimento ao Cliente e Vendas',
+      description:
         'Tenho 3 anos de experiência em vendas comerciais na empresa Doce Amor Modas, Loja de Roupas e Acessórios. Apesar da empresa ser do segmento de vendas presenciais, foi onde tive meu primeiro contato com tecnologia utilizando Design Gráfico na elaboração de anúncios promocionais e na elaboração de cartões de visita para atrair leads ao estabelecimento. Também foi onde tive meu primeiro contato com linguagem de programação, tentando resolver problemas no software de fluxo de caixa que eu utilizava (escrito na linguagem Visual Basic). Tenho também dois anos de experiência na utilização de Software CRM na empresa Iddeias Consulting.',
     },
   ];
 
   const handleButtonClick = (index) => {
     setShowDescription(showDescription === index ? null : index);
+  
+    if (buttonContainerRef.current) {
+      const buttonHeight = buttonContainerRef.current.children[0].offsetHeight;
+      const newScrollTop = index * buttonHeight;
+      buttonContainerRef.current.scrollTop = newScrollTop;
+    }
   };
+
+const handleScroll = () => {
+  if (buttonContainerRef.current) {
+    const { scrollTop, clientHeight } = buttonContainerRef.current;
+    const newScrollPercentage = (scrollTop / clientHeight) * 100;
+    setScrollPercentage(newScrollPercentage);
+  }
+};
+
+  useEffect(() => {
+    if (buttonContainerRef.current) {
+      buttonContainerRef.current.addEventListener('scroll', handleScroll);
+    }
+    return () => {
+      if (buttonContainerRef.current) {
+        buttonContainerRef.current.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
 
   return (
     <ExperiencesWrapper>
       <Title>Experiências:</Title>
       <DivButtonsAndDescription>
-        <ButtonContainer>
-          {experiencesData.map((experience, index) => (
-            <Button key={index} onClick={() => handleButtonClick(index)}>
-              {experience.title}
-            </Button>
-          ))}
-        </ButtonContainer>
+        {/* <ScrollContainer ref={buttonContainerRef}> */}
+          <ButtonContainer>
+            {experiencesData.map((experience, index) => (
+              <Button
+                key={index}
+                onClick={() => handleButtonClick(index)}
+                isActive={showDescription === index}
+              >
+                {experience.title}
+              </Button>
+            ))}
+          </ButtonContainer>
+          <ScrollBar style={{ top: `${scrollPercentage}%` , alignItems:`center`}} />
+        {/* </ScrollContainer> */}
         <DescriptionContainer>
           {showDescription !== null && (
             <Paragraph>{experiencesData[showDescription].description}</Paragraph>

@@ -20,8 +20,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    handleResize(); // Define o estado inicial
-
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -60,11 +59,10 @@ const Header = () => {
           {isMobileView ? (
             <>
               <MobileMenuButton onClick={toggleMobileMenu}>
-              {isMobileMenuOpen ? <FaTimes size={24} color="grey" /> : <FaBars size={24} color="grey" />}
+                {isMobileMenuOpen ? <FaTimes size={24} color="grey" /> : <FaBars size={24} color="grey" />}
               </MobileMenuButton>
               {isMobileMenuOpen && (
                 <MobileMenu onClick={(e) => e.stopPropagation()}>
-                  {/* <ButtonOne onClick={() => scrollToSection('#inicio')}>Início</ButtonOne> */}
                   <ButtonOne onClick={() => scrollToSection('#sobremim')}>Sobre mim</ButtonOne>
                   <ButtonOne onClick={() => scrollToSection('#educacao')}>Educação</ButtonOne>
                   <ButtonOne onClick={() => scrollToSection('#experiencias')}>Experiências</ButtonOne>
@@ -76,13 +74,12 @@ const Header = () => {
             </>
           ) : (
             <>
-              <ButtonOne onClick={() => scrollToSection('#inicio')}>Início</ButtonOne>
-              <ButtonOne onClick={() => scrollToSection('#sobremim')}>Sobre mim</ButtonOne>
+              <ButtonOne style={{paddingLeft:"20px"}} onClick={() => scrollToSection('#sobremim')} >Sobre mim</ButtonOne>
               <ButtonOne onClick={() => scrollToSection('#educacao')}>Educação</ButtonOne>
               <ButtonOne onClick={() => scrollToSection('#experiencias')}>Experiências</ButtonOne>
               <ButtonOne onClick={() => scrollToSection('#projetos')}>Projetos</ButtonOne>
               <ButtonOne onClick={() => scrollToSection('#servicos')}>Serviços</ButtonOne>
-              <ButtonOne onClick={() => scrollToSection('#contato')}>Contato</ButtonOne>
+              <ButtonOne style={{paddingRight:"20px"}} onClick={() => scrollToSection('#contato')}>Contato</ButtonOne>
             </>
           )}
         </Navigation>
