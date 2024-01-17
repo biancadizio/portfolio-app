@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/portfolio-app/static/js/main.dfa0a475.js",
+    "static/media/ruiva2.png": "/portfolio-app/static/media/ruiva2.071385989b1e0891a277.png",
+    "index.html": "/portfolio-app/index.html",
+    "main.dfa0a475.js.map": "/portfolio-app/static/js/main.dfa0a475.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.dfa0a475.js"
+  ]
+}
