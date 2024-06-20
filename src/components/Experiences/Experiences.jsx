@@ -22,7 +22,7 @@ const Experiences = () => {
     {
       title: 'SOFTABLE TECNOLOGIA LTDA',
       description:
-        'Atuo em projetos de grande escala como desenvolvedora de aplicações front-end utilizando React.js, Next.js, Typescript e styled-components. Atuo também na integração com APIs, componentização, Clean Code e desenvolvimento de arquiteturas front-end escaláveis.',
+        'Atuei em projetos de grande escala como desenvolvedora de aplicações front-end utilizando React.js, Next.js, Typescript e styled-components. Atuei também na integração com APIs, componentização, Clean Code e desenvolvimento de arquiteturas front-end escaláveis.',
     },
     {
       title: 'EAGLE-EDU',
