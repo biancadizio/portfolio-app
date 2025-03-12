@@ -72,4 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### Application Deployment
 
-### use the command `npm run build` to create the build folder to deploy the application and use the command `gh-pages -d build` to deploy the application from the gh-pages branch
+### use the command `npm run build` to create the build folder to deploy the application and use the command `npx gh-pages -d build` to deploy the application from the gh-pages branch
