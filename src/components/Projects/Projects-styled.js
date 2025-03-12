@@ -29,9 +29,8 @@ export const ProjectsContainer = styled.div`
 }
   `;
 
-
-export const Project1 = styled.div`
-  border: 1px solid red;
+  export const Project0 = styled.div`
+  border: 1px solid turquoise;
   padding: 2rem;
   margin: 1rem 0;
   width: 100%;
@@ -42,7 +41,30 @@ export const Project1 = styled.div`
     display: flex;
     flex-direction: column;
     width: 50%;
-    margin: 30px 30px 30px 30px;
+    margin: 30px;
+  }
+`;
+
+export const Link0 = styled.a`
+  color: turquoise;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  `;
+
+
+export const Project1 = styled.div`
+  border: 1px solid red;
+  padding: 2rem;
+  margin: 1rem 0;
+  width: 100%;
+  color: white;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 30px;
   }
 `;
 
@@ -64,8 +86,7 @@ export const Project2 = styled.div`
     display: flex;
     flex-direction: column;
     width: 50%;
-    margin: 30px 30px 30px 30px;
-    padding: 2.6rem;
+    margin: 30px;
   }
 `;
 
@@ -88,7 +109,7 @@ export const Project3 = styled.div`
     display: flex;
     flex-direction: column;
     width: 50%;
-    margin: 0 30px 0 30px;
+    margin: 30px;
   }
 `;
 
@@ -110,7 +131,7 @@ export const Link3 = styled.a`
     display: flex;
     flex-direction: column;
     width: 50%;
-    margin: 0 30px 0 30px;
+    margin: 30px;
   }
 `;
 
@@ -133,7 +154,7 @@ export const Link4 = styled.a`
     display: flex;
     flex-direction: column;
     width: 50%;
-    margin: 30px 30px 30px 30px;
+    margin: 30px;
   }
 `;
 

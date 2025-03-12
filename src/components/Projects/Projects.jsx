@@ -2,12 +2,14 @@ import React from 'react';
 import {
   ProjectsWrapper,
   Title,
+  Project0,
   Project1,
   Project2,
   Project3,
   Project4,
   Project5,
   Paragraph,
+  Link0,
   Link1,
   Link2,
   Link3,
@@ -22,6 +24,11 @@ const Projects = () => {
     <ProjectsWrapper>
       <Title>Meus Projetos:</Title>
       <ProjectsContainer>
+      <Project0>
+        <h1>Busca CEP com API dos Correios</h1>
+        <Paragraph>Aplicação web com Next.js e Tailwind com interface de login que leva a uma consulta de Endereço através do CEP.</Paragraph>
+        <Paragraph><Link0 href="https://projeto-elevcode.vercel.app/">Visualizar Projeto</Link0></Paragraph>
+      </Project0>
       <Project1>
         <h1>Jogos Javascript</h1>
         <Paragraph>Jogo da adivinhação e "Paint" desenvolvidos durante meus estudos com HTML, CSS, Javascript e API Canvas.</Paragraph>
