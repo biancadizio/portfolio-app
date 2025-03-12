@@ -6,7 +6,7 @@ const Education = () => {
     <EducationWrapper>
       <Title>Educação:</Title>
       <Paragraph>
-        Estou cursando o 2° ano do curso de Bacharelado em Sistemas de Informação na Universidade de São Paulo (USP) – Campus São Carlos no período noturno.
+        Estou cursando o 3° ano do curso de Bacharelado em Sistemas de Informação na Universidade de São Paulo (USP) – Campus São Carlos no período noturno.
       </Paragraph>
       <Paragraph>Alguns dos cursos que fiz desde que me apaixonei por tecnologia foram:</Paragraph>
       <CourseList>

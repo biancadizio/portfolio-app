@@ -22,7 +22,7 @@ const Experiences = () => {
     {
       title: 'DOit!',
       description:
-        'Atualmente, atuto no desenvolvimento e manutenção de componentes reutilizáveis, modulares, escaláveis e interativos com React, TypeScript e Material-UI. Também faço a criação de protótipos de telas interativas com Figma. Além disso, atuo na implementação de chamadas a APIs RESTful, tratamento de erros e arquitetura front-end robusta. Desenvolvo testes unitários com Vitest, utilizo técnicas de Clean Code e versionamento de código com Git. Faço uso do Azure DevOps para gerenciamento de tarefas e integração contínua.',
+        'Atualmente, atuo no desenvolvimento e manutenção de componentes reutilizáveis, modulares, escaláveis e interativos com React, TypeScript e Material-UI. Também faço a criação de protótipos de telas interativas com Figma. Além disso, atuo na implementação de chamadas a APIs RESTful, tratamento de erros e arquitetura front-end robusta. Desenvolvo testes unitários com Vitest, utilizo técnicas de Clean Code e versionamento de código com Git. Faço uso do Azure DevOps para gerenciamento de tarefas e integração contínua.',
     },
     {
       title: 'ELEVCODE',
