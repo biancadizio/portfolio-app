@@ -14,7 +14,7 @@ import {
 } from './Experiences-styled';
 
 const Experiences = () => {
-  const [showDescription, setShowDescription] = useState(null);
+  const [showDescription, setShowDescription] = useState(0);
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const buttonContainerRef = useRef(null);
 
