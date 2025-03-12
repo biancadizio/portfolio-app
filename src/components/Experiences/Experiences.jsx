@@ -20,6 +20,16 @@ const Experiences = () => {
 
   const experiencesData = [
     {
+      title: 'DOit!',
+      description:
+        'Atualmente, atuto no desenvolvimento e manutenção de componentes reutilizáveis, modulares, escaláveis e interativos com React, TypeScript e Material-UI. Também faço a criação de protótipos de telas interativas com Figma. Além disso, atuo na implementação de chamadas a APIs RESTful, tratamento de erros e arquitetura front-end robusta. Desenvolvo testes unitários com Vitest, utilizo técnicas de Clean Code e versionamento de código com Git. Faço uso do Azure DevOps para gerenciamento de tarefas e integração contínua.',
+    },
+    {
+      title: 'ELEVCODE',
+      description:
+        'Atuei em projetos no desenvolvimento e manutenção de componentes reutilizáveis e modulares utilizando React.js, Next.js, Redux, Typescript e Tailwind. Uso de técnicas de otimização para melhora da performance de aplicações e utilização de técnicas de Clean Code.',
+    },
+    {
       title: 'SOFTABLE TECNOLOGIA LTDA',
       description:
         'Atuei em projetos de grande escala como desenvolvedora de aplicações front-end utilizando React.js, Next.js, Typescript e styled-components. Atuei também na integração com APIs, componentização, Clean Code e desenvolvimento de arquiteturas front-end escaláveis.',
